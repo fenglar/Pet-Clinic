@@ -1,6 +1,7 @@
 package pl.marcin.petclinic.bootstrap;
 
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
 import pl.marcin.petclinic.model.Owner;
 import pl.marcin.petclinic.model.Vet;
 import pl.marcin.petclinic.services.OwnerService;
@@ -8,13 +9,15 @@ import pl.marcin.petclinic.services.VetService;
 import pl.marcin.petclinic.services.map.OwnerServiceMap;
 import pl.marcin.petclinic.services.map.VetServiceMap;
 
+@Component
 public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
