@@ -2,5 +2,5 @@ package pl.marcin.petclinic.services;
 
 import pl.marcin.petclinic.model.Speciality;
 
-public interface SpecialitiesService extends CrudService<Speciality, Long> {
+public interface SpecialityService extends CrudService<Speciality, Long> {
 }
